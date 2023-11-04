@@ -4,6 +4,7 @@ export default class Algorithm {
     this.input = document.querySelector('.input');
     this.form = document.getElementById('form');
     this.validateNumber = this.validateNumber.bind(this);
+    this.calcCheckNum = this.calcCheckNum.bind(this);
   }
 
   initialize() {
