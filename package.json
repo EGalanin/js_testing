@@ -9,7 +9,7 @@
     "lint": "eslint . --fix",
     "test": "jest --testPathPattern=./src/",
     "coverage": "jest --testPathPattern=./src/ --coverage",
-    "e2e": "jest --testPathPattern=./e2e/",
+    "e2e": "jest --testPathPattern=./e2e/ --runInBand",
     "doc": "jsdoc -c jsdoc.conf.json",
     "preshow:coverage": "npm run coverage",
     "show:coverage": "live-server coverage/lcov-report",
@@ -43,6 +43,7 @@
   "dependencies": {
     "core-js": "^3.33.1",
     "html-webpack-plugin": "^5.5.3",
+    "jsdom": "^22.1.0",
     "mini-css-extract-plugin": "^2.7.6",
     "webpack": "^5.89.0",
     "webpack-dev-server": "^4.15.1",

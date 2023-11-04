@@ -4,6 +4,10 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
   target: 'web',
+  devServer: {
+    port: 9000,
+  },
+  devtool: 'source-map',
   output: {
     path: path.resolve(__dirname, 'dist'),
     publicPath: '',

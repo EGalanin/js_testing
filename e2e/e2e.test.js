@@ -1,7 +1,7 @@
 import puppeteer from 'puppeteer';
 import { fork } from 'child_process';
 
-jest.setTimeout(30000);
+jest.setTimeout(200000);
 
 describe('Card Form', () => {
   let browser = null;
@@ -9,7 +9,7 @@ describe('Card Form', () => {
   let server = null;
   const baseUrl = 'http://localhost:9000';
 
-  beforeAll(async () => {
+  beforeEach(async () => {
     server = fork(`${__dirname}/e2e.server.js`);
     await new Promise((resolve, reject) => {
       server.on('error', reject);
@@ -28,21 +28,10 @@ describe('Card Form', () => {
     page = await browser.newPage();
   });
 
-  afterAll(async () => {
+  afterEach(async () => {
     await browser.close();
     server.kill();
   });
-
-  // test('Проверит валидный номер', async () => {
-  //   await page.goto(baseUrl);
-  //   const form = await page.$('#form');
-  //   const input = await form.$('.input');
-  //   const button = await form.$('.button');
-
-  //   await input.type('4556765265954626');
-  //   await button.click();
-  //   await page.waitForSelector('.success-message');
-  // });
 
   test.each([
     ['.success-message', 'valid', '4556765265954626'],

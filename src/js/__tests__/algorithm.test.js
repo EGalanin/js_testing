@@ -1,3 +1,7 @@
+/**
+ * @jest-environment jsdom
+ */
+
 import Algorithm from '../Algorithmm';
 
 test('Контрольная цифра равна вычисленной цифре', () => {

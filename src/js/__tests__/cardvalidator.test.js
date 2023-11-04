@@ -1,3 +1,7 @@
+/**
+ * @jest-environment jsdom
+ */
+
 import CardValidator from '../CardValidator';
 import CardWidget from '../CardWidget';
 
