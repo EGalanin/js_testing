@@ -8,6 +8,7 @@
     "build": "webpack --config webpack.prod.js",
     "lint": "eslint . --fix",
     "test": "jest --testPathPattern=./src/",
+    "test:ci": "start-server-and-test start http://localhost:9000 e2e",
     "coverage": "jest --testPathPattern=./src/ --coverage",
     "e2e": "jest --testPathPattern=./e2e/ --runInBand",
     "doc": "jsdoc -c jsdoc.conf.json",
@@ -37,6 +38,7 @@
     "jsdoc": "^4.0.2",
     "live-server": "^1.2.2",
     "puppeteer": "^21.4.1",
+    "start-server-and-test": "^2.0.2",
     "style-loader": "^3.3.3",
     "webpack-cli": "^5.1.4"
   },

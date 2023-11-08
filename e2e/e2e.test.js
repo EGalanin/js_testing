@@ -1,7 +1,7 @@
 import puppeteer from 'puppeteer';
 import { fork } from 'child_process';
 
-jest.setTimeout(200000);
+jest.setTimeout(30000);
 
 describe('Card Form', () => {
   let browser = null;
@@ -21,9 +21,9 @@ describe('Card Form', () => {
     });
 
     browser = await puppeteer.launch({
-    //   headless: true,
-    //   slowMo: 100,
-    //   devtools: false,
+      // headless: false,
+      // slowMo: 100,
+      // devtools: true,
     });
     page = await browser.newPage();
   });
