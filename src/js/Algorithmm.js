@@ -32,6 +32,7 @@ export default class Algorithm {
     }
   }
 
+  /* eslint-disable class-methods-use-this */
   calcCheckNum(value) {
     const invertedArr = value.slice(0, value.length - 1).split('').reverse().map(Number);
 
@@ -51,4 +52,5 @@ export default class Algorithm {
 
     return 10 - (sum % 10);
   }
+  /* eslint-enable class-methods-use-this */
 }
