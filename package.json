@@ -10,7 +10,7 @@
     "test": "jest --testPathPattern=./src/",
     "test:ci": "start-server-and-test start http://localhost:9000 e2e",
     "coverage": "jest --testPathPattern=./src/ --coverage",
-    "e2e": "jest --testPathPattern=./e2e/ --runInBand",
+    "e2e": "jest --testPathPattern=./e2e/ --detectOpenHandles",
     "doc": "jsdoc -c jsdoc.conf.json",
     "preshow:coverage": "npm run coverage",
     "show:coverage": "live-server coverage/lcov-report",
@@ -37,7 +37,7 @@
     "jest-puppeteer": "^9.0.1",
     "jsdoc": "^4.0.2",
     "live-server": "^1.2.2",
-    "puppeteer": "^21.4.1",
+    "puppeteer": "^21.5.0",
     "start-server-and-test": "^2.0.2",
     "style-loader": "^3.3.3",
     "webpack-cli": "^5.1.4"
