@@ -8,21 +8,21 @@ describe('Card Form', () => {
   const baseUrl = 'http://localhost:9000';
 
   beforeEach(async () => {
-    server = fork(`${__dirname}/e2e.server.js`);
-    await new Promise((resolve, reject) => {
-      server.on('error', reject);
-      server.on('message', (message) => {
-        if (message === 'ok') {
-          resolve();
-        }
-      });
-    });
+    // server = fork(`${__dirname}/e2e.server.js`);
+    // await new Promise((resolve, reject) => {
+    //   server.on('error', reject);
+    //   server.on('message', (message) => {
+    //     if (message === 'ok') {
+    //       resolve();
+    //     }
+    //   });
+    // });
 
     browser = await puppeteer.launch({
-      devtools: true,
-      headless: false,
-      slowMo: 250,
-      // headless: 'new',
+      // devtools: true,
+      // headless: false,
+      // slowMo: 250,
+      headless: 'new',
     });
     page = await browser.newPage();
   });
