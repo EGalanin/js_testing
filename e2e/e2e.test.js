@@ -27,9 +27,9 @@ describe('Card Form', () => {
     page = await browser.newPage();
   });
 
-  afterEach(async () => {
+  beforeAll(async () => {
     await browser.close();
-    server.kill();
+    // server.kill();
   });
 
   test.each([
