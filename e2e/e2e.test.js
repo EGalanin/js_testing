@@ -1,10 +1,10 @@
 import puppeteer from 'puppeteer';
-import { fork } from 'child_process';
+// import { fork } from 'child_process';
 
-describe('Card Form', () => {  
+describe('Card Form', () => {
   let browser;
   let page;
-  let server;
+  // let server;
   const baseUrl = 'http://localhost:9000';
 
   beforeEach(async () => {
@@ -19,11 +19,13 @@ describe('Card Form', () => {
     // });
 
     browser = await puppeteer.launch({
-      // devtools: true,
+      // devtools: false,
       // headless: false,
       // slowMo: 250,
       headless: 'new',
+
     });
+
     page = await browser.newPage();
   });
 
@@ -37,7 +39,7 @@ describe('Card Form', () => {
     ['.error-message', 'invalid', '455676526595462111'],
     ['.error-message', 'invalid', '45567'],
     ['.error-message', 'invalid', ''],
-  ] )('Добавит класс', async (message, _, cardNumber) => {
+  ])('Добавит класс', async (message, _, cardNumber) => {
     await page.goto(baseUrl);
     await page.waitForSelector('#form');
 
@@ -49,5 +51,5 @@ describe('Card Form', () => {
     await button.click();
 
     await page.waitForSelector(message);
-  });  
+  });
 });
